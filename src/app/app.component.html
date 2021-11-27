@@ -1,9 +1,9 @@
 
 Enter Your Name :<br>
 <input #InputData type="text">
-<button (click)="Accept(InputData.value)" (click)="onAudioPlay()" style="margin:5px" >Submit</button><br>
+<button (click)="Accept(InputData.value)" (click)="onAudioPlay()" style="margin:5px" (click)="Random()" >Submit</button><br>
 <h3>{{value1}}</h3><br>
-<img [src]="MyImg" width="200px">
+<img [src]="randomImg"  width="250px">
 
 <audio #audioOption>
     <source src='../assets/H.wave' type="audio/mp3">
