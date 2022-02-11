@@ -1,10 +1,25 @@
 
-Enter Your Name :<br>
-<input #InputData type="text">
-<button (click)="Accept(InputData.value)" (click)="onAudioPlay()" style="margin:5px" (click)="Random()" >Submit</button><br>
-<h3>{{value1}}</h3><br>
-<img [src]="randomImg"  width="250px">
+<div>
+    <label for="name">Enter Your Name :</label><br>
+    
+    <input #InputData type="text">
+    <button class="btn btn-primary" (click)="Accept(InputData.value)" (click)="onAudioPlay()" style="margin:5px" (click)="Random()" (click)="video()">Submit</button><br>
+    <h3>{{value1}}</h3><br>
+    <!--Audio-->
+    <audio #audioOption>
+        <source src='../assets/H.wave' type="audio/mp3">
+    </audio> 
+        <div class="d-flex justify-content-start">  
+        <div class="p-2">
+            <img [src]="randomImg"  width="350px">
+        </div>
+        <div class="p-2">
+            <video *ngIf="isclick" controls class="video" autoplay #videoPlayer>
+                <source src="../assets/party.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
 
-<audio #audioOption>
-    <source src='../assets/H.wave' type="audio/mp3">
-</audio>    
+</div>
+
